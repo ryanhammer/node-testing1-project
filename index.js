@@ -6,6 +6,9 @@
  * EXAMPLE
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
+
+const testObject = { name: '  jane  ' };
+
 function trimProperties(obj) {
   // ✨ implement
   const newObj = {...obj};
@@ -16,7 +19,7 @@ function trimProperties(obj) {
   return newObj;
 }
 
-console.log(trimProperties({ name: '  jane  ' }));
+console.log(trimProperties(testObject));
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
@@ -28,7 +31,14 @@ console.log(trimProperties({ name: '  jane  ' }));
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  const keys = Object.keys(obj);
+  keys.forEach(key => {
+    obj[key] = obj[key].trim();
+  });
+  return obj;
 }
+
+console.log(trimPropertiesMutation(testObject));
 
 /**
  * [Exercise 3] findLargestInteger finds the largest integer in an array of objects { integer: 1 }
