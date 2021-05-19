@@ -50,7 +50,13 @@ console.log(trimPropertiesMutation(testObject));
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  const largestInt = integers.reduce((highNum, currentNumObj) => {
+    return Math.max(highNum, currentNumObj.integer);
+  }, integers[0].integer);
+  return largestInt;
 }
+
+console.log(findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]));
 
 class Counter {
   /**
