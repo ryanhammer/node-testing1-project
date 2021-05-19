@@ -8,7 +8,15 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  const newObj = {...obj};
+  const keys = Object.keys(newObj);
+  keys.forEach(key => {
+    newObj[key] = newObj[key].trim();
+  });
+  return newObj;
 }
+
+console.log(trimProperties({ name: '  jane  ' }));
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
