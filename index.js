@@ -151,7 +151,7 @@ const isEvenNumberAsync = async (number) => {
     error.message = 'number must be a number';
     throw error;
   } else {
-    const result = (number % 2  === 0) ? "result is true" : "result is false";
+    const result = (number % 2  === 0) ? true : false;
     return result;
   }
 }
